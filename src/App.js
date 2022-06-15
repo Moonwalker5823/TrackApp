@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import { forwardRef, useContext} from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import Tracks from './components/Tracks';
+import { TrackContext } from './useSongContext';
+import { Context } from './useSongContext'
 
 function App() {
+  const {track} = TrackContext(Context);
+  console.log(track)
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Context.Provider value={{track}} >
+    <div className="app">
+      <Navbar title={"Track App"}/>
+      <Tracks/>
     </div>
+     </Context.Provider>
+    
   );
 }
 
