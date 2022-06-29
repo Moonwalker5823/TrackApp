@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 .active{
   border: 1px solid red;
 }
@@ -16,6 +10,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .controls{

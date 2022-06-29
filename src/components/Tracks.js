@@ -14,21 +14,21 @@ function Tracks(){
        <>
         <CssBaseline />
         <Container maxWidth="sm">
-        <Box sx={{ bgcolor: 'whitesmoke', height: '90vh'}} >
-          <Grid container spacing={1}>
-            <Grid  container item spacing={1} sm={12}>
-       {track.map(el => 
-          <Track 
-            key={el.id} 
-            artist={el.artist} 
-            track={el.track}
-            isPaused={el.isPaused}
-            />
-            )}
-        </Grid>
-        </Grid>
-        </Box>
-      </Container>
+            <Box sx={{ bgcolor: 'whitesmoke', height: '85vh', overflow: "scroll", marginTop: "30px"}} >
+              <Grid container spacing={1}>
+                <Grid  container item spacing={1} sm={16}>
+                  {track.map(el => 
+                      <Track 
+                        key={el.id} 
+                        artist={el.artist} 
+                        track={el.track}
+                        isPaused={el.isPaused}
+                        />
+                        )}
+                </Grid>
+              </Grid>
+            </Box>
+        </Container>
        </>
     )
 }

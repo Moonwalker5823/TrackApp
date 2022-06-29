@@ -1,4 +1,4 @@
-import { useState, createContext, useMemo, useCallback} from 'react';
+import { useState, createContext, useMemo, useCallback, useEffect} from 'react';
 import axios from 'axios';
 const trackList = {
   tracks: [{
@@ -59,16 +59,38 @@ export const Context = createContext();
 
 export const TrackContext = () => {
 
-const [track , setTrack] = useState(trackList.tracks)
+const [track, setTrack] = useState(trackList.tracks)
 const [isPaused, setIsPaused] = useState(true)
 const [selected, setSelected] = useState(trackList.tracks[trackList.count])
 
-// //Find Music API to fetch Songs from 
+//Find Music API to fetch Songs from 
+
 // useEffect(() => {
-//   axios.get("").then((res) => {
-//     setTrack(res.data)
-//});
+//   const fetch = async () => {
+//     const result = await axios.get('https://shazam.p.rapidapi.com/charts/track');
+//     setTrack(result.data)
+//   }
+//     fetch();
 // }, [track])
+
+
+// const options = {
+//   method: 'GET',
+//   url: 'https://shazam.p.rapidapi.com/charts/track',
+//   params: {locale: 'en-US', pageSize: '10', startFrom: '0'},
+//   headers: {
+//     'X-RapidAPI-Key': '842b691e7cmsha371683a7f43d13p1bc7d7jsnb19f451ac903',
+//     'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
+//   }
+// };
+
+// axios.request(options).then(function (response) {
+// 	console.log(response.data);
+// }).catch(function (error) {
+// 	console.error(error);
+// });
+
+
 
   const forward = useCallback(
   ({id}) => {
@@ -106,11 +128,4 @@ const [selected, setSelected] = useState(trackList.tracks[trackList.count])
         backward
       ]
     );
-
-//     return (
-//         <TrackContext.Provider value={{track}}>
-//            {children}
-//         </TrackContext.Provider>
-//     )
-      };
-// //  export default TrackContext;
+}

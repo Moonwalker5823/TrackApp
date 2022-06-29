@@ -15,7 +15,7 @@ function Track({track, artist, isPaused}) {
 
  return (
          <Card sx={{display: "flex"}}>
-            <Box sx={{display:"flex", flexDirection: "column"}}>
+            <Box sx={{justifyContent:"center",flexDirection: "column"}}>
                 <CardMedia
                     component="img"
                     sx={{width: 151, display: "flex", justifyContent: "center"}}
