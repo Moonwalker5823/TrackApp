@@ -9,21 +9,22 @@ import {Grid} from "@mui/material"
 
 
 function Tracks(){
-  const {track, isPaused} = useContext(Context)
+  const {track, artist, isPaused} = useContext(Context)
       return (
        <>
         <CssBaseline />
         <Container maxWidth="sm">
         <Box sx={{ bgcolor: 'whitesmoke', height: '90vh'}} >
           <Grid container spacing={1}>
-            <Grid  container item spacing={1} sm={20}>
+            <Grid  container item spacing={1} sm={12}>
        {track.map(el => 
           <Track 
             key={el.id} 
             artist={el.artist} 
             track={el.track}
-            isPaused={isPaused}
-            />)}
+            isPaused={el.isPaused}
+            />
+            )}
         </Grid>
         </Grid>
         </Box>

@@ -1,5 +1,5 @@
 import { useState, createContext, useMemo, useCallback} from 'react';
-
+import axios from 'axios';
 const trackList = {
   tracks: [{
     id: 1,
@@ -55,14 +55,6 @@ const trackList = {
 }
 
 
-// //Find Music API to fetch Songs from 
-// useEffect(() => {
-//   effect
-//   return () => {
-//     cleanup
-//   }
-// }, [input])
-
 export const Context = createContext();
 
 export const TrackContext = () => {
@@ -70,6 +62,13 @@ export const TrackContext = () => {
 const [track , setTrack] = useState(trackList.tracks)
 const [isPaused, setIsPaused] = useState(true)
 const [selected, setSelected] = useState(trackList.tracks[trackList.count])
+
+// //Find Music API to fetch Songs from 
+// useEffect(() => {
+//   axios.get("").then((res) => {
+//     setTrack(res.data)
+//});
+// }, [track])
 
   const forward = useCallback(
   ({id}) => {

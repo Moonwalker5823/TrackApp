@@ -6,8 +6,9 @@ import { TrackContext } from './useSongContext';
 import { Context } from './useSongContext'
 
 function App() {
-  const {track} = TrackContext(Context);
-  console.log(track)
+
+  const {track} = TrackContext();
+  
   
 
   return (

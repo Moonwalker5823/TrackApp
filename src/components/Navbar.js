@@ -17,5 +17,4 @@ function Navbar({title}) {
     </Box>
     )
 }
-
 export default Navbar
